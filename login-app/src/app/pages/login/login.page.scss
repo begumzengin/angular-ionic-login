@@ -1,7 +1,14 @@
-ion-button[color="tertiary"]{
+ion-button{
+    --background: #79b68c;
+    --background-hover: #7a9183;
+    --border-radius: 20px;
     text-transform: lowercase;
 }
 
 ion-content{
-    --background: #5260ff;
+    --background: #d8e090;
+}
+
+.title{
+    color: #e8b818;
 }

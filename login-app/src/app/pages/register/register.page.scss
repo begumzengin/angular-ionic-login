@@ -1,3 +1,11 @@
 ion-content{
     --background: #d8e090;
 }
+
+ion-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    --background: #79b68c;
+}

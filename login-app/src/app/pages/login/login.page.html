@@ -1,23 +1,30 @@
 <ion-content>
   <div class="flex-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title class="title">begucuk</ion-card-title>
-      </ion-card-header>
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="title">login</ion-card-title>
+        </ion-card-header>
 
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">e-mail</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-button  size="full">forgot email/password?</ion-button>
-        <ion-button  class="login-button" size="full" (click)="login()">login</ion-button>
-        <ion-button  class="extra-button" size="full" (click)="register()">register</ion-button>
-      </ion-card-content>
-    </ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">e-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">email is mandatory</ion-label>
+          <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">email is invalid</ion-label>
+          
+          <ion-item>
+            <ion-label position="floating">password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">password is mandatory</ion-label>
+
+          <ion-button  size="full" [disabled]="!form.get('email')?.valid">forgot email/password?</ion-button>
+          <ion-button  class="login-button" size="full" [disabled]="!form.valid" (click)="login()">login</ion-button>
+          <ion-button  class="extra-button" size="full" (click)="register()">register</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 </ion-content>

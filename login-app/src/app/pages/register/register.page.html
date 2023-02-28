@@ -15,19 +15,15 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]='name' ></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">e-mail</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" [(ngModel)]='email'></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">confirm password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]='password'></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>

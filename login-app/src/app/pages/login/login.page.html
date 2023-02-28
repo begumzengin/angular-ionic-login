@@ -20,7 +20,7 @@
           </ion-item>
           <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">password is mandatory</ion-label>
 
-          <ion-button  size="full" [disabled]="!form.get('email')?.valid">forgot email/password?</ion-button>
+          <!--<ion-button  size="full" [disabled]="!form.get('email')?.valid">forgot email/password?</ion-button>-->
           <ion-button  class="login-button" size="full" [disabled]="!form.valid" (click)="login()">login</ion-button>
           <ion-button  class="extra-button" size="full" (click)="register()">register</ion-button>
         </ion-card-content>
